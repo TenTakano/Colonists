@@ -1,20 +1,20 @@
-import React from 'react';
+import React, {FC} from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 
-const MyMain: React.FunctionComponent<{}> = () => {
+const MyMain: FC = () => {
   return (
     <div>This is root page</div>
   );
 }
 
-const MySecond: React.FunctionComponent<{}> = () => {
+const MySecond: FC = () => {
   return (
     <div>This is second page</div>
   );
 }
 
-const Root: React.FunctionComponent<{}> = () => {
+const App: FC = () => {
   return (
     <Switch>
       <Route exact path="/" component={MyMain} />
@@ -26,7 +26,7 @@ const Root: React.FunctionComponent<{}> = () => {
 
 ReactDOM.render(
   <BrowserRouter>
-    <Root />
+    <App />
   </BrowserRouter>,
   document.getElementById('root')
 );
